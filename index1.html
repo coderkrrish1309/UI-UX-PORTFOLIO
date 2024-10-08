@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krrish's Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+        font-family: -apple-system, sans-serif;
+    }
+
+    :root {
+        --bg-color: #27496D;
+        --snd-bg-color: #142850;
+        --text-color: #FFF;
+        --main-color: #00F4FD;
+    }
+
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    section {
+        min-height: 100vh;
+        padding: 10rem 9% 2rem;
+    }
+
+    /* Header & NavBar Section */
+
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 5%;
+        background: var(--main-color);
+        backdrop-filter: blur(10px);
+        transition: all 0.5s ease;
+    }
+
+    .logo {
+        font-size: 3rem;
+        color: var(--bg-color);
+        font-weight: 700;
+        cursor: default;
+        transition: 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+
+    .navbar a {
+        font-size: 1.9rem;
+        color: var(--bg-color);
+        margin-left: 4rem;
+        font-weight: 700;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: var(--text-color);
+    }
+
+    #menu-icon {
+        font-size: 3.6rem;
+        color: var(--bg-color);
+        cursor: pointer;
+        display: none;
+    }
+
+    /* Home Section */
+
+    .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-img img {
+        width: 25vw;
+        animation: floatImage 4s ease-in-out infinite;
+        border-radius: 50%;
+        box-shadow: 0 0 25px var(--main-color);
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    .home-img img:hover {
+        box-shadow: 0 0 25px var(--main-color),
+            0 0 35px var(--main-color),
+            0 0 55px var(--main-color);
+    }
+
+    @keyframes floatImage {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-2.4rem);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .home-content {
+        margin-left: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 3.7rem;
+        font-weight: 700;
+    }
+
+    .home-content h3:nth-of-type(2) {
+        margin-bottom: 2rem;
+    }
+
+    span {
+        color: var(--main-color);
+    }
+
+    .home-content h1 {
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+
+    .social-media a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+        background: transparent;
+        border: .2rem solid var(--main-color);
+        border-radius: 50%;
+        font-size: 2rem;
+        color: var(--main-color);
+        margin: 3rem 1.5rem 3rem 0;
+        transition: .3s ease-in-out;
+    }
+
+    .social-media a:hover {
+        transform: scale(1.2)translateY(-10px);
+        background-color: var(--main-color);
+        color: var(--bg-color);
+        box-shadow: 0 0 25px var(--main-color);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2.8rem;
+        background: var(--main-color);
+        border-radius: 4rem;
+        box-shadow: none;
+        font-size: 1.6rem;
+        color: var(--bg-color);
+        letter-spacing: .1rem;
+        font-weight: 600;
+        transition: .5s ease;
+    }
+
+    .btn:hover {
+        box-shadow: 0 0 1.6rem var(--main-color);
+    }
+
+    /* About Section */
+
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        background: var(--snd-bg-color);
+    }
+
+    .about-img img {
+        width: 25vw;
+        width: 25vw;
+        border: 2px solid var(--main-color);
+        border-radius: 50%;
+        box-shadow: 0 0 25px var(--main-color);
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    .about-img img:hover {
+        box-shadow: 0 0 25px var(--main-color),
+            0 0 35px var(--main-color),
+            0 0 55px var(--main-color);
+    }
+
+    .heading {
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    .about-content {
+        padding: 0 4rem;
+    }
+
+    .about-content h2 {
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .about-content h3 {
+        font-size: 3rem;
+    }
+
+    .about-content p {
+        font-size: 1.6rem;
+        margin: 2rem 0 3rem;
+    }
+
+    /* Services Section */
+
+    .services h2 {
+        margin-bottom: 5rem;
+    }
+
+    .services-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .services-container .services-box {
+        flex: 1 1 30rem;
+        background: var(--snd-bg-color);
+        padding: 6rem 2rem 6rem;
+        border-radius: 2rem;
+        text-align: center;
+        border: .3rem solid var(--bg-color);
+        transition: .5s ease;
+    }
+
+    .services-container .services-box:hover {
+        border-color: var(--main-color);
+        transform: scale(1.02);
+    }
+
+    .services-box i {
+        font-size: 7rem;
+        color: var(--main-color);
+    }
+
+    .services-box h3 {
+        font-size: 2.6rem;
+    }
+
+    .services-box p {
+        font-size: 1.6rem;
+        margin: 1rem 0 3rem;
+    }
+
+    /* ******************Testimonials Section********************* */
+
+    .testimonials {
+        background: var(--snd-bg-color);
+    }
+
+    .testimonials-box {
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .testimonials .heading {
+        margin-bottom: 5rem;
+    }
+
+    .testimonials-box img {
+        width: 15rem;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        box-shadow: 0 0 25px var(--main-color);
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .testimonial-item {
+        min-height: 450px;
+        max-width: 450px;
+        background: var(--bg-color);
+        border: .3rem solid var(--bg-color);
+        border-radius: 2rem;
+        margin: 0 2rem;
+        padding: 20px 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        color: white;
+        transition: 0.5s ease;
+
+    }
+
+    .testimonial-item:hover {
+        border-color: var(--main-color);
+        transform: scale(1.02);
+    }
+
+    .testimonial-item h2 {
+        font-size: 3rem;
+    }
+
+    .testimonial-item p {
+        font-size: 1.8rem;
+    }
+
+    #star {
+        color: gold;
+        font-size: 2rem;
+    }
+
+    /* ******************Contact Section********************* */
+
+    .contact {
+        background-color: var(--bg-color);
+    }
+
+    .contact h2 {
+        margin-bottom: 3rem;
+        color: var(--main-color);
+    }
+
+    .contact form {
+        max-width: 80rem;
+        margin: 1rem auto;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .contact form .input-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        color: var(#fff);
+        background: var(--bg-color);
+        border-radius: 0.8rem;
+        border: 0.25rem solid var(--main-color);
+        margin: 0.7rem 0;
+        resize: none;
+    }
+
+    .contact form .input-box input {
+        width: 49%;
+        margin: 0.7rem 0.35rem;
+    }
+
+    .contact form .btn {
+        margin-top: 2rem;
+    }
+
+    /* ******************Footer Section********************* */
+
+    .footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 40px 0;
+        background-color: var(--snd-bg-color);
+    }
+
+    .footer .social {
+        text-align: center;
+        padding-bottom: 25px;
+        color: var(--main-color);
+    }
+
+    .footer .social a {
+        font-size: 25px;
+        color: var(--main-color);
+        border: 2px solid var(--main-color);
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .footer .social a:hover {
+        transform: scale(1.2)translateY(-10px);
+        background-color: var(--main-color);
+        color: var(--bg-color);
+        box-shadow: 0 0 25px var(--main-color);
+    }
+
+    .footer .copyright {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: var(--text-color);
+    }
+
+    /* BreakPoint */
+
+    @media (max-width:1200px) {
+        html {
+            font-size: 55%;
+        }
+    }
+
+    @media (max-width:991px) {
+        .header {
+            padding: 2rem 3%;
+        }
+
+        section {
+            padding: 10rem 3%;
+        }
+
+        .services {
+            padding: 7rem
+        }
+
+        .testimonials .wrapper {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .contact form .input-box input {
+            width: 100%;
+        }
+
+        .footer {
+            padding: 2rem 3%;
+        }
+    }
+
+    @media (max-width:786px) {
+        #menu-icon {
+            display: block;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 100%;
+            right: -100%;
+            width: 255px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--main-color);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            display: block;
+            padding: 17px;
+            font-size: 22px;
+        }
+
+        .navbar.active {
+            right: 0;
+        }
+
+        .home {
+            flex-direction: column;
+        }
+
+        .home-content h3 {
+            font-size: 2.6rem;
+        }
+
+        .home-content h1 {
+            font-size: 5rem;
+        }
+
+        .home-content {
+            order: 2;
+            margin-left: 1rem;
+        }
+
+        .home-img img {
+            width: 70vw;
+            margin-top: 4rem;
+        }
+
+        .about {
+            flex-direction: column-reverse;
+        }
+
+        .about-img img {
+            width: 70vw;
+            margin-top: 4rem;
+        }
+
+        .services h2 {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media (max-width:617px) {
+        .home-img img {
+            width: 70vw;
+            margin-top: 8rem;
+        }
+
+        .about-img img {
+            width: 70vw;
+            margin-top: 4rem;
+        }
+    }
+
+    @media (max-width:450px) {
+        html {
+            font-size: 50%;
+        }
+    }
+</style>
+
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <a href="#home" class="logo">Krrish Prajapati</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+
+    <section id="home" class="home">
+        <div class="home-img">
+            <img src="download (2).png" alt="Profile Image">
+        </div>
+        <div class="home-content">
+            <h3>Hello, Myself</h3>
+            <h1>Krish Prajapati</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>a passionate UI/UX designer with expertise in creating intuitive and engaging user experiences. My skills
+                include wireframing, prototyping, user research, visual design, Figma, Sketch, and frontend development
+                using HTML, CSS, and JavaScript. I thrive in crafting responsive designs that blend aesthetics with
+                functionality."</p>
+            <div class="social-media">
+                <a
+                    href="https://www.linkedin.com/in/prajapati-krish-b1674431b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/coderkrrish1309"><i class='bx bxl-github'></i></a>
+                <a href="https://www.facebook.com/share/WXqiLXHMP69Hnaru/?mibextid=qi2Omg"><i
+                        class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/officially_boy_krrish/
+"><i class='bx bxl-instagram'></i></a>
+            </div>
+
+            <a href="MY resume (1).pdf" class="btn">Download CV</a>
+        </div>
+
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span> </h2>
+            <h3>I'm a <span>UI/UX designer</span></h3>
+            <p> I specialize in crafting intuitive and visually appealing user interfaces, ensuring a seamless user
+                experience across various platforms. With expertise in both UI/UX design and frontend development, I
+                create modern, responsive websites that are not only aesthetically pleasing but also functionally
+                robust. My skills in web design allow me to bring creative concepts to life, ensuring that each project
+                meets client needs while adhering to the latest industry standards.</p>
+            <a href="https://www.figma.com/proto/qpoNxjk1pk3VZ6QvnsmVwt/Presentation-Template---Introduction--to-UI%2FUX-Designing-(Community)?page-id=0%3A1&node-id=1-2&node-type=frame&viewport=80%2C359%2C0.08&t=CAEydi0lLpYu496e-1&scaling=contain&content-scaling=fixed"
+                class="btn">Read more</a>
+        </div>
+        <div class="about-img">
+            <img src="download.png" alt="">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="heading">My <span>Services</span> </h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code'></i>
+                <h3>Web Development</h3>
+                <p>Web development is the process of building and maintaining websites. It involves coding and
+                    programming to create the structure, layout, and functionality of a website. Web development
+                    typically includes tasks like front-end development (designing the visual elements that users
+                    interact with), back-end development (managing databases, servers, and application logic), and
+                    full-stack development, which combines both. It ensures websites are user-friendly, fast, and
+                    accessible across various devices and browsers.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-palette'></i>
+                <h3>UI/UX Design</h3>
+                <p>UI/UX design focuses on enhancing user experience through intuitive and visually appealing
+                    interfaces. UI (User Interface) design deals with the look, layout, and interactive elements of a
+                    product, ensuring that it’s easy to navigate. UX (User Experience) design emphasizes the overall
+                    experience a user has while interacting with the product, aiming to make it seamless and satisfying.
+                    Together, UI/UX design creates products that are both functional and enjoyable to use, bridging the
+                    gap between users and technology.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxl-android'></i>
+                <h3>App Development</h3>
+                <p>App development involves designing, creating, and maintaining mobile or web applications that deliver
+                    seamless functionality and user experience. It includes front-end design for the user interface,
+                    back-end coding for server and database interactions, and ensuring the app works across different
+                    devices and platforms. The goal is to create intuitive, fast, and engaging apps that solve user
+                    problems or provide entertainment./p>
+                    <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <section id="testimonials" class="testimonials">
+        <div class="testimonials-box">
+            <h2 class="heading">Projects</h2>
+
+            <div class="wrapper">
+                <div class="testimonial-item"
+                    style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c8594e167771655.642eac429bbf5.png');">
+                    <h2>Web Designs</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <a href="https://www.figma.com/proto/v7QJV1mIO8Uysa244tkRMO?node-id=0-1&t=LAKNHqvWFbori27S-6"
+                        class="btn">Explore</a>
+                </div>
+
+                <div class="testimonial-item"
+                    style="background-image: url('https://img.freepik.com/premium-photo/consistent-typography-is-easy-read-consistent-design_789749-2563.jpg');">
+                    <h2>Ui Design</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <a href="https://www.figma.com/proto/OZYATyblyuKgzEStSoZrai?node-id=0-1&t=GHwqsyk8fH2phaTD-6"
+                        class="btn">Explore</a>
+
+                </div>
+
+                <div class="testimonial-item"
+                    style="background-image: url('https://images.pexels.com/photos/273230/pexels-photo-273230.jpeg?cs=srgb&dl=pexels-pixabay-273230.jpg');">
+
+                    <h2>Ux Research</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <a href="https://www.figma.com/design/eNiS3hLEuovWUCiQB9URoc/UX-RESERCH?m=auto&t=hpKi04wm7gUOwUPk-6"
+                        class="btn">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name">
+                <input type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" name="number" placeholder="Phone Number">
+                <input type="text" name="subject" placeholder="Email Subject">
+            </div>
+
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+        </div>
+
+        <p class="copyright">
+            © Krish Prajapati - All Rights Reserved
+        </p>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
